@@ -11,6 +11,8 @@ import Gsap03 from "./gsap/gsap03";
 import Framer01 from "./framer/framer01";
 import Framer02 from "./framer/framer02";
 import Framer03 from "./framer/framer03";
+import Framer04 from "./framer/framer04";
+import Framer05 from "./framer/framer05";
 
 /*
   [ 스크롤트리거 플러그인 등록 ]
@@ -31,6 +33,8 @@ export default function Home() {
     {/* <Gsap03 /> */}
     {/* <Framer01 /> */}
     {/* <Framer02 /> */}
-    <Framer03 />
+    {/* <Framer03 /> */}
+    {/* <Framer04 /> */}
+    <Framer05 />
   </>;
 }
