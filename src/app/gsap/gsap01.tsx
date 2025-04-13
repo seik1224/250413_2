@@ -32,17 +32,37 @@ const Gsap01 = () => {
 
   // from 애니메이션
   const handleClickBox2 = () => {
-
+    gsap.from(boxRef2.current, {
+      x:200, // 시작위치
+      opacity:0
+    })
   }
 
   // fromTo 애니메이션
   const handleClickBox3 = () => {
-
+    gsap.fromTo(
+      boxRef3.current,
+      {
+        x: 300, opacity:0
+      },
+      {
+        x: 0, opacity:1,
+        duration:1.5,
+        ease:'power2.inOut',
+        onStart : ()=> console.log("START"),
+        onComplete : ()=> console.log("END")
+      }
+    )
   }
 
   // set
   const handleClickBox4 = () => {
-
+    gsap.set(boxRef4.current, {
+      x:Math.random()*200 - 100,
+      y:Math.random()*200 - 100,
+      rotation : Math.random()*360,
+      scale : 0.5 + Math.random()
+    })
   }
   return (
     <>
