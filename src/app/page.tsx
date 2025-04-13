@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis01 from "./lenis/lenis";
 import Observer01 from "./lenis/observer01";
+import Horizontal from "./lenis/horizontal";
+import Gsap01 from "./gsap/gsap01";
 
 /*
   [ 스크롤트리거 플러그인 등록 ]
@@ -17,6 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   return <>
     {/* <Lenis01 /> */}
-    <Observer01 />
+    {/* <Observer01 /> */}
+    {/* <Horizontal /> */}
+    <Gsap01 />
   </>;
 }
