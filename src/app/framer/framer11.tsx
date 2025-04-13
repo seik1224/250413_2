@@ -35,9 +35,9 @@ const Framer11 = () => {
       </section>
       <section className="h-[100vh] flex items-center justify-center">
         <div className="flex space-x-4">
-          <div style={{opacity:opacity1}} className="bg-blue-500 w-20 h-20" />
-          <div style={{opacity:opacity2}} className="bg-blue-500 w-20 h-20" />
-          <div style={{opacity:opacity3}} className="bg-blue-500 w-20 h-20" />
+          <motion.div style={{opacity:opacity1}} className="bg-blue-500 w-20 h-20" />
+          <motion.div style={{opacity:opacity2}} className="bg-blue-500 w-20 h-20" />
+          <motion.div style={{opacity:opacity3}} className="bg-blue-500 w-20 h-20" />
         </div>
       </section>
       <section className="h-screen flex items-center justify-center bg-gray-100">
