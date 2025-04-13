@@ -12,3 +12,10 @@
 설치 : npm i gsap
 타입설치 : npm i --save-dev @types/gsap
 사용 : import gsap from 'gsap';
+
+---
+
+# ScrollTrigger
+
+설치 : npm i gsap@3.12.1 scrolltrigger
+사용 : import {gsap} from 'gsap/all';

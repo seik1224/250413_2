@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const Gsap02 = () => {
+  const boxRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="h-[200vh] flex justify-center items-center">
-      <div className="size-20 bg-red-600">BOX</div>
+      <div ref={boxRef} className="size-20 bg-red-600">BOX</div>
     </section>
   );
 };
