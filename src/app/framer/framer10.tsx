@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 
 const colors = [
   "bg-red-500",
@@ -9,15 +11,26 @@ const colors = [
 ];
 
 const Framer10 = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target : containerRef,
+    offset : ['start start', 'end end'],
+  })
+
+  const x = useTransform(
+    scrollYProgress,
+    [0,1],
+    ['0%', `-${(colors.length -1) * 100}%`]
+  )
   return (
     <>
       <section className="h-screen flex items-center justify-center bg-gray-100">
         <h1 className="text-4xl font-bold">상단 섹션</h1>
       </section>
 
-      <div className="h-[400vh]">
+      <div ref={containerRef} className="h-[400vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          <div className="flex h-full items-center">
+          <motion.div style={{x}} className="flex h-full items-center">
             {colors.map((color, index) => (
               <div key={index} className={`h-[100vh] w-full flex-shrink-0`}>
                 <div
@@ -27,7 +40,7 @@ const Framer10 = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
