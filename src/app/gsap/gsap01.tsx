@@ -14,7 +14,19 @@ const Gsap01 = () => {
       opacity:0.5, // 종료 투명도
       duration:1, // 애니메이션 지속시간
       ease:'bounce.out', // 가속도
-      repeat:5,
+      /*
+        power1, power2, power3, power4
+        sine, expo, circ
+        back, elastic, bounce
+        
+        .in 시작 속도 빠름
+        .out 끝 속도 빠름
+        .inOut 시작과 끝 속도 빠름
+      */
+      repeat:5, // 애니메이션 반복 횟수
+      yoyo:true, // 애니메이션 종료 후 원래 위치로 돌아가기
+      repeatDelay:0.5, // 반복 사이 딜레이 추가
+      delay : 1, // 애니메이션 시작 딜레이
     })
   }
 
