@@ -1,11 +1,15 @@
 import React from "react";
+import { motion } from 'framer-motion';
 
 const Framer01 = () => {
   return (
     <>
-      <div className="bg-blue-500 text-white rounded size-40 flex justify-center items-center">
+      <motion.div
+        whileHover={{scale:1.2, rotate:90}}
+        whileTap={{scale:0.8, borderRadius : '100%'}}
+        className="bg-blue-500 text-white rounded size-40 flex justify-center items-center">
         CLICK
-      </div>
+      </motion.div>
     </>
   );
 };

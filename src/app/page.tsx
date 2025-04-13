@@ -8,6 +8,7 @@ import Horizontal from "./lenis/horizontal";
 import Gsap01 from "./gsap/gsap01";
 import Gsap02 from "./gsap/gsap02";
 import Gsap03 from "./gsap/gsap03";
+import Framer01 from "./framer/framer01";
 
 /*
   [ 스크롤트리거 플러그인 등록 ]
@@ -25,6 +26,7 @@ export default function Home() {
     {/* <Horizontal /> */}
     {/* <Gsap01 /> */}
     {/* <Gsap02 /> */}
-    <Gsap03 />
+    {/* <Gsap03 /> */}
+    <Framer01 />
   </>;
 }
