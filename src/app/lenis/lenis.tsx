@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 
 const Lenis01 = () => {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(()=>{
+    const lenis = new Lenis({
+      // 스크롤 애니메이션 지속시간
+      duration:3,
+      // 가속도
+      easing : (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel : true,
+    });
+
+    const raf = (time : number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+    
+    /* 이벤트 연결*/
+    lenisRef.current = lenis;
+
+    return () => {
+      lenis.destroy();
+    }
+  }, [])
+
+  const stopScroll = () => {
+    lenisRef.current?.stop();
+  }
+
+  const startScroll = () => {
+    lenisRef.current?.start();
+  }
+
+
   return (
     <>
       <div className="fixed top-0 left-0 flex gap-4">
-        <button className="bg-slate-100 rounded-lg p-4 opacity-90">STOP</button>
-        <button className="bg-slate-100 rounded-lg p-4 opacity-90">
+        <button onClick={stopScroll} className="bg-slate-100 rounded-lg p-4 opacity-90">STOP</button>
+        <button onClick={startScroll} className="bg-slate-100 rounded-lg p-4 opacity-90">
           ACTIVE
         </button>
       </div>

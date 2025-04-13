@@ -2,6 +2,7 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis01 from "./lenis/lenis";
 
 /*
   [ 스크롤트리거 플러그인 등록 ]
@@ -13,5 +14,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  return <></>;
+  return <>
+    <Lenis01 />
+  </>;
 }
